@@ -1,0 +1,37 @@
+server:
+  port: ${vcap.application.port:8200}
+---
+    
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration    
+  
+  security.ldap:
+    active: false
+    url: ldap://192.168.0.4:389
+    authentication: simple
+    baseDN: OU=userldap,DC=gob,DC=com,DC=pe
+    admin: gitlab@test.com.pe
+    password: password 
+   
+  production:
+    active: false
+    
+  security.jwt:
+    tokenExpirationTime: 240 # Number of minutes
+    refreshTokenExpTime: 1440 # Minutes
+    tokenIssuer: http://gmd.com.pe
+    tokenSigningKey: xm8EV6Hy5RMFK4EEACIDAwQus  
+  
+  mail:
+    sender: lmgomez.saavedra@gmail.com
+    fromIP: 192.168.1.45
+    host: 192.168.0.10
+    username: lgomezs
+    password: H4ZG9:iQ
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: false
+          starttls.enable: false           
