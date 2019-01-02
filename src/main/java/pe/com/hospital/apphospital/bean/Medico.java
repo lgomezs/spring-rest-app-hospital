@@ -13,7 +13,7 @@ import pe.com.hospital.apphospital.bean.Hospital.HospitalBuilder;
 
 @Data
 @Builder
-@Document(collection="Medicos")
+@Document(collection="medicos")
 public class Medico implements Serializable {
 
 	/**
